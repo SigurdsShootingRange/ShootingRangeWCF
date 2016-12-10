@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using WpfApplication1;
 
 namespace ShootingRange
 {
@@ -12,8 +11,8 @@ namespace ShootingRange
     {
         public string Say(string s)
         {
-            Console.WriteLine("Server Got Message" + s);
-            return "Server reply" + s;
+            Console.WriteLine("Server Got Message: " + s);
+            return "Server reply: " + s;
         }
     }
 }

@@ -12,9 +12,9 @@ namespace WpfApplication1
     /// </summary>
     public partial class MainWindow : Window
     {
-        
+        bool isFirstMessage = true;
 
-        Uri uriAddress = new Uri("http://localhost:4400/SayService");
+        Uri uriAddress = new Uri("http://localhost:4000/SayService");
 
         BasicHttpBinding bind = new BasicHttpBinding();
 
@@ -38,7 +38,7 @@ namespace WpfApplication1
 
             if (channelFactory != null && ImessageChannel != null)
             {
-                MessageBox.Text +=  DateTime.Now + "I said:" + TypingBox.Text + Environment.NewLine;
+                MessageBox.Text += Environment.NewLine + DateTime.Now + " I said: " + TypingBox.Text + Environment.NewLine;
                 MessageBox.Text += ImessageChannel.Say(TypingBox.Text) + Environment.NewLine;
                 GotMessage();
             }
@@ -46,7 +46,9 @@ namespace WpfApplication1
 
         private void GotMessage()
         {
+            TypingBox.Clear();
             MessageBox.ScrollToEnd();
+
         }
     }
 }

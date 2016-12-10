@@ -15,12 +15,15 @@ namespace ShootingRange
 
             ServiceHost serviceHost = new ServiceHost(typeof(SayService));
 
-            Thread serviceThread = new Thread(() => serviceHost.Open());
-            serviceThread.IsBackground = false;
+            //Thread serviceThread = new Thread(() => serviceHost.Open());
+            //serviceThread.IsBackground = false;
+
+            serviceHost.Open();
 
             Console.WriteLine("Service has been started");
             Console.ReadKey();
 
+            serviceHost.Close();
         }
     }
 }

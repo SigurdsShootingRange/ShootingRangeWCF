@@ -1,6 +1,6 @@
 ﻿using System.ServiceModel;
 
-namespace WpfApplication1
+namespace ShootingRange
 {
     [ServiceContract]
     interface IMessageContract
